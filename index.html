@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch-On Diet Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-label="Diet overview">
+        <img src="assets/korean-switch-hero.png" alt="Korean-style high protein meal prep foods" />
+        <div class="hero__shade"></div>
+        <div class="language-switch" aria-label="Language selector">
+          <button id="englishButton" type="button" data-lang="en">English</button>
+          <button id="chineseButton" type="button" data-lang="zh">简体中文</button>
+        </div>
+        <div class="hero__content">
+          <p class="eyebrow" data-i18n="heroEyebrow">28-day Korean Switch-On inspired tracker</p>
+          <h1 data-i18n="heroTitle">Plan the day. Log the meal. Keep the streak visible.</h1>
+          <p data-i18n="heroCopy">
+            A practical four-week tracker for shake days, low-carb high-protein meals,
+            and the scheduled fast days described in public reviews of the diet.
+          </p>
+        </div>
+      </section>
+
+      <section class="summary-strip" aria-label="Progress summary">
+        <div>
+          <span id="daysLeft">28</span>
+          <p data-i18n="daysLeftLabel">days left</p>
+        </div>
+        <div>
+          <span id="completedDays">0</span>
+          <p data-i18n="loggedLabel">logged</p>
+        </div>
+        <div>
+          <span id="currentWeek">Week 1</span>
+          <p data-i18n="selectedPhaseLabel">selected phase</p>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="calendar-panel" aria-label="Diet day calendar">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow" data-i18n="dailyLogEyebrow">Daily log</p>
+              <h2 data-i18n="chooseDayTitle">Choose a day</h2>
+            </div>
+            <button id="resetButton" class="icon-button" type="button" aria-label="Reset completed days" title="Reset completed days">
+              ↺
+            </button>
+          </div>
+          <div id="dayGrid" class="day-grid"></div>
+        </aside>
+
+        <section class="detail-panel" aria-live="polite">
+          <div class="detail-topline">
+            <div>
+              <p id="phaseLabel" class="eyebrow">Week 1</p>
+              <h2 id="dayTitle">Day 1</h2>
+            </div>
+            <label class="complete-toggle">
+              <input id="completeToggle" type="checkbox" />
+              <span data-i18n="loggedToggle">Logged</span>
+            </label>
+          </div>
+
+          <div class="day-focus">
+            <span id="dayBadge">Shake reset</span>
+            <p id="dayDescription"></p>
+          </div>
+
+          <div class="food-section">
+            <div class="section-title">
+              <p class="eyebrow" data-i18n="permittedEyebrow">Permitted today</p>
+              <h3 data-i18n="foodListTitle">Food list</h3>
+            </div>
+            <div id="foodList" class="food-list"></div>
+          </div>
+
+          <div class="notes-section">
+            <label for="dayNotes" data-i18n="notesLabel">Day notes</label>
+            <textarea id="dayNotes" rows="5" placeholder="How did meals, hunger, energy, and prep go today?"></textarea>
+          </div>
+
+          <p class="safety-note" data-i18n="safetyNote">
+            This is a planning website, not medical advice. The diet includes restrictive
+            shake days and 24-hour fasts; check with a qualified clinician before starting,
+            especially with health conditions, pregnancy, eating-disorder history, or medication use.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
